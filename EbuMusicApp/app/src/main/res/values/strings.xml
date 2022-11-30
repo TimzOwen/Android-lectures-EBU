@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EbuMusicApp</string>
+    <string name="artist_timz">Artist: Samson</string>
+    <string name="imagemusic">imageMusic</string>
+    <string name="pause">pause</string>
+    <string name="stop">stop</string>
+    <string name="play">play</string>
+</resources>

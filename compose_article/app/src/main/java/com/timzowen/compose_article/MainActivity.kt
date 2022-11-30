@@ -1,4 +1,4 @@
-package com.timzowen.businesscardcompose
+package com.timzowen.compose_article
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,25 +11,23 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.scale
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.timzowen.businesscardcompose.ui.theme.BusinessCardComposeTheme
+import com.timzowen.compose_article.ui.theme.Compose_articleTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BusinessCardComposeTheme {
+            Compose_articleTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    BusinessCardImage("Google","drinks")
+                    ComposeArticle("Compose")
                 }
             }
         }
@@ -37,45 +35,42 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun BusinessAdvertText(name: String,food:String ){
+fun ComposeArticle(name: String) {
     Column {
+        val img = painterResource(id = R.drawable.bg_compose_background)
+        Box{
+            Image(
+                painter = img,
+                contentDescription ="compose image",
+                modifier = Modifier
+                    .fillMaxWidth()
+            )
+        }
         Text(
-            text = "Welcome on board $name",
-            fontSize = 16.sp,
+            fontSize = 24.sp,
+            text = "Jetpack Compose Article",
             modifier = Modifier
+                .wrapContentWidth()
                 .fillMaxWidth()
-                .wrapContentWidth(Alignment.CenterHorizontally)
-                .padding(start = 8.dp, end = 8.dp, top = 18.dp)
+                .padding(start = 18.dp,)
         )
         Text(
-            text = "Lets Order some $food",
-            fontSize = 12.sp,
+            text = " Just a lot of compose materials by the Google android team here" +
+                    "Jetpack allows you to build robust app quickly with less code. " +
+                    "You write once for UI and backend . No more XML for UI" ,
+            fontSize = 18.sp,
             modifier = Modifier
                 .fillMaxWidth()
-                .wrapContentWidth(Alignment.CenterHorizontally)
-                .padding(start = 8.dp, end = 8.dp)
+                .padding(start = 18.dp, end = 8.dp)
         )
     }
-}
-
-@Composable
-fun BusinessCardImage(name: String, food: String){
-
-    Image(
-        painter = painterResource(id = R.drawable.google),
-        contentDescription = "sample",
-        contentScale = ContentScale.Crop,
-        modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight()
-    )
-
-    BusinessAdvertText(name = "Jumia", food = "Juice")
 
 }
 
 @Preview(showBackground = true)
 @Composable
-fun BusinessPreview(){
-    BusinessCardImage("Facebook","likes")
+fun DefaultPreview() {
+    Compose_articleTheme {
+        ComposeArticle("")
+    }
 }

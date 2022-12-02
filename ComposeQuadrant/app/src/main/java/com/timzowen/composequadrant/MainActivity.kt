@@ -12,6 +12,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.modifier.modifierLocalConsumer
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -39,8 +41,33 @@ class MainActivity : ComponentActivity() {
 fun ComposableQuadrantApp() {
     Column(Modifier.fillMaxWidth()) {
         Row(Modifier.weight(1f)) {
+            ComposableCardInfo(
+                title = stringResource(R.string.text_composable),
+                desc = stringResource(R.string.composable_text),
+                backgroundColor = Color.Green,
+                modifier = Modifier.weight(1f)
+            )
+            ComposableCardInfo(
+                title = stringResource(R.string.image_composable),
+                desc = stringResource(R.string.composable_image),
+                backgroundColor = Color.Yellow,
+                modifier = Modifier.weight(1f)
+            )
         }
-        
+        Row(Modifier.weight(1f)) {
+            ComposableCardInfo(
+                title = stringResource(R.string.column_composable),
+                desc = stringResource(R.string.composable_column),
+                backgroundColor = Color.Cyan,
+                modifier = Modifier.weight(1f)
+            )
+            ComposableCardInfo(title = stringResource(R.string.row_composable),
+                desc = stringResource(id = R.string.composable_row),
+                backgroundColor = Color.Blue,
+                modifier = Modifier.weight(1f)
+            )
+        }
+
     }
 }
 

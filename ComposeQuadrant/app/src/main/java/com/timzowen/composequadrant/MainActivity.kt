@@ -67,7 +67,6 @@ fun ComposableQuadrantApp() {
                 modifier = Modifier.weight(1f)
             )
         }
-
     }
 }
 

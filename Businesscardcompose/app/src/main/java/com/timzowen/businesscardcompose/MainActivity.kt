@@ -41,7 +41,7 @@ fun BusinessAdvertText(name: String,food:String ){
     Column {
         Text(
             text = "Welcome on board $name",
-            fontSize = 16.sp,
+            fontSize = 26.sp,
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentWidth(Alignment.CenterHorizontally)
@@ -49,7 +49,7 @@ fun BusinessAdvertText(name: String,food:String ){
         )
         Text(
             text = "Lets Order some $food",
-            fontSize = 12.sp,
+            fontSize = 22.sp,
             modifier = Modifier
                 .fillMaxWidth()
                 .wrapContentWidth(Alignment.CenterHorizontally)
@@ -64,13 +64,13 @@ fun BusinessCardImage(name: String, food: String){
     Image(
         painter = painterResource(id = R.drawable.google),
         contentDescription = "sample",
-        contentScale = ContentScale.Crop,
+        contentScale = ContentScale.Fit,
         modifier = Modifier
             .fillMaxWidth()
             .fillMaxHeight()
     )
 
-    BusinessAdvertText(name = "Jumia", food = "Juice")
+    BusinessAdvertText(name = "Google", food = "Juice")
 
 }
 

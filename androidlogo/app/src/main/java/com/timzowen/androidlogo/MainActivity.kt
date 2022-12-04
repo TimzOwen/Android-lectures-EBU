@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -14,10 +15,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.timzowen.androidlogo.ui.theme.AndroidlogoTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,8 +34,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ComposableAndroidLogo(
-                    )
+                    ComposableAndroidLogo()
                 }
             }
         }
@@ -51,41 +54,58 @@ fun ComposableAndroidLogo() {
             modifier = Modifier
                 .width(100.dp)
                 .height(100.dp)
-                .clip(CircleShape)
-
+        )
+        Text(
+            text = "Timz Owen",
+            fontSize = 30.sp,
+            color = Color.White,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Mobile Developer instructor",
+            fontSize = 22.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Green
         )
     }
-    Column(modifier = Modifier.fillMaxSize(),
+
+    Column(modifier = Modifier.fillMaxSize()
+        .padding(bottom = 30.dp),
         verticalArrangement = Arrangement.Bottom,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Row(horizontalArrangement = Arrangement.Center){
-            Image(
+            Icon(
                 painter = painterResource(id = R.drawable.ic_phone) ,
-                modifier = Modifier.padding(30.dp),
+                tint = Color.Green,
+                modifier = Modifier
+                    .weight(1f),
                 contentDescription ="phone" )
             Text(
                 text = "+254740254637",
-                modifier = Modifier.padding(start = 30.dp, end = 30.dp, bottom = 15.dp),
+                modifier = Modifier.weight(1f)
             )
         }
-        Row(horizontalArrangement = Arrangement.Center){
-            Image(
+        Row(horizontalArrangement = Arrangement.Center,
+        modifier = Modifier.fillMaxWidth()){
+            Icon(
                 painter = painterResource(id = R.drawable.ic_phone) ,
-                modifier = Modifier.padding(start = 30.dp, end = 30.dp, bottom = 15.dp),
-                contentDescription ="phone" )
+                contentDescription ="phone" ,
+                modifier = Modifier.weight(1f),
+                tint = Color.Green)
             Text(
+                modifier = Modifier.weight(1f),
                 text = "+254740254637",
-                modifier = Modifier.padding(30.dp),
             )
         }
         Row(horizontalArrangement = Arrangement.Center){
-            Image(
+            Icon(
                 painter = painterResource(id = R.drawable.ic_baseline_contact_mail_24) ,
-                modifier = Modifier.padding(start = 30.dp, end = 30.dp, bottom = 30.dp),
+                tint = Color.Green,
+                modifier = Modifier.weight(1f),
                 contentDescription ="phone" )
             Text(
-                modifier = Modifier.padding(30.dp),
+                modifier = Modifier.weight(1f),
                 text = "timz.owen@google.com"
             )
         }

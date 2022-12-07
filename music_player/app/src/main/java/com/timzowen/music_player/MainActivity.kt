@@ -1,6 +1,7 @@
 package com.timzowen.music_player
 
 import android.media.AudioManager
+import android.media.Image
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
      lateinit var btnPlay : FloatingActionButton
      lateinit var btnPause : FloatingActionButton
      var mediaPlayer : MediaPlayer? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -58,7 +58,7 @@ fun ComposableAndroidLogo() {
         Text(
             text = "Timz Owen",
             fontSize = 30.sp,
-            color = Color.White,
+            color = Color.Black,
             fontWeight = FontWeight.Bold
         )
         Text(

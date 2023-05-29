@@ -9,7 +9,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -55,7 +54,7 @@ fun ComposeArticle(name: String) {
                 .padding(start = 18.dp,)
         )
         Text(
-            text = " Just a lot of compose materials by the Google android team here" +
+            text = "Just a lot of compose materials by the Google android team here" +
                     "Jetpack allows you to build robust app quickly with less code. " +
                     "You write once for UI and backend . No more XML for UI" ,
             fontSize = 18.sp,
@@ -64,13 +63,12 @@ fun ComposeArticle(name: String) {
                 .padding(start = 18.dp, end = 8.dp)
         )
     }
-
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     Compose_articleTheme {
-        ComposeArticle("")
+        ComposeArticle("Compose")
     }
 }

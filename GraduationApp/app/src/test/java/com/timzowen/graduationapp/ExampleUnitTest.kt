@@ -1,4 +1,4 @@
-package com.timzowen.ebu_uber
+package com.timzowen.graduationapp
 
 import org.junit.Test
 
@@ -10,11 +10,8 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-
     @Test
-    fun check_division(){
-        assertEquals(2,8 / 4)
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
     }
-
-
 }
